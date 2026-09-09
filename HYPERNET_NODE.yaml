@@ -1,0 +1,7 @@
+schema: ghost-atlas.hypernet.node/v1
+repository: Atlas-Ascend/HEIMDALL-Machine-Governor
+lifecycle: active
+plane: runtime-governance
+role: bounded-machine-governance-and-runtime-safety-provider
+hypernets: [github, render, eden, hardware, software, cloud]
+routing: {authorization: Janus-Prime, io: Crowngrid, discovery: Estate-Service-Catalog-Capability-Registry, transport: Ghost-Atlas-Estate-Service-Mesh-Runtime-Connectivity-Fabric, events: Ghost-Atlas-Estate-Event-Gateway, observability: Ghost-Atlas-Runtime-Observatory, quality: SECA, security: Medusa-Sovereign-Security}
