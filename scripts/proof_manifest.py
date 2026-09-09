@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 TRACKED = [
@@ -23,7 +23,7 @@ def main() -> None:
         if path.exists():
             files[name] = hashlib.sha256(path.read_bytes()).hexdigest()
     payload = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "artifact": "HEIMDALL-Machine-Governor",
         "files": files,
     }
