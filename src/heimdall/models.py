@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Any
 from uuid import uuid4
@@ -77,7 +77,7 @@ class EvidenceItem(BaseModel):
     evidence_id: str = Field(default_factory=lambda: f"EV-{uuid4().hex[:12]}")
     evidence_type: str
     payload: dict[str, Any] = Field(default_factory=dict)
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 class VerificationRequest(BaseModel):
