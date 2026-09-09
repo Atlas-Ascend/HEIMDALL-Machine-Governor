@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
 
 def new_receipt_id() -> str:
-    return f"HG-{datetime.now(timezone.utc):%Y%m%d}-{uuid4().hex[:8]}"
+    return f"HG-{datetime.now(UTC):%Y%m%d}-{uuid4().hex[:8]}"
 
 
 def persist_receipt(receipt_id: str, payload: dict) -> Path:
